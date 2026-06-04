@@ -4,7 +4,7 @@
     </a>
 </h2>
 <h2 align="center">
-   SpaceShip10k
+   Hệ thống xác thực chứng chỉ Blockchain
 </h2>
 <div align="center">
     <p align="center">
