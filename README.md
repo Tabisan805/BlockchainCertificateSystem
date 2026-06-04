@@ -19,92 +19,92 @@
 
 </div>
 
-# 📋 Project Implementation Summary
+# 📋 Tổng quan triển khai dự án
 
-## ✅ Completed: Blockchain Certificate Verification System
+## ✅ Hoàn thành: Hệ thống xác thực chứng chỉ Blockchain
 
-Created a complete, production-ready web application for managing and verifying certificates on Ethereum Sepolia testnet.
+Đã xây dựng ứng dụng web đầy đủ, sẵn sàng sản xuất, để quản lý và xác thực chứng chỉ trên mạng Ethereum Sepolia testnet.
 
 ---
 
-## 📦 Project Structure
+## 📦 Cấu trúc dự án
 
 ```
 Blockchain/
 │
 ├── smart-contract/
 │   ├── contracts/
-│   │   └── CertificateRegistry.sol          ✅ Complete smart contract
+│   │   └── CertificateRegistry.sol          ✅ Hợp đồng thông minh hoàn chỉnh
 │   ├── scripts/
-│   │   └── deploy.js                        ✅ Deployment script
-│   ├── hardhat.config.js                    ✅ Hardhat configuration
-│   ├── package.json                         ✅ Dependencies
-│   └── .env                                 ✅ Environment config
+│   │   └── deploy.js                        ✅ Script triển khai
+│   ├── hardhat.config.js                    ✅ Cấu hình Hardhat
+│   ├── package.json                         ✅ Các thư viện phụ thuộc
+│   └── .env                                 ✅ Cấu hình môi trường
 │
 ├── backend/
 │   ├── src/
-│   │   ├── index.js                         ✅ Main server
+│   │   ├── index.js                         ✅ Máy chủ chính
 │   │   ├── routes/
-│   │   │   ├── auth.js                      ✅ Authentication endpoints
-│   │   │   ├── certificates.js              ✅ Certificate CRUD
-│   │   │   ├── verify.js                    ✅ Verification endpoints
-│   │   │   ├── qr.js                        ✅ QR code generation
-│   │   │   └── admin.js                     ✅ Admin operations
+│   │   │   ├── auth.js                      ✅ API xác thực
+│   │   │   ├── certificates.js              ✅ CRUD chứng chỉ
+│   │   │   ├── verify.js                    ✅ API xác thực
+│   │   │   ├── qr.js                        ✅ QR code
+│   │   │   └── admin.js                     ✅ Chức năng admin
 │   │   ├── middleware/
 │   │   │   └── auth.js                      ✅ JWT middleware
 │   │   └── utils/
-│   │       ├── BlockchainService.js         ✅ Blockchain interaction
-│   │       ├── HashService.js               ✅ SHA-256 hashing
-│   │       ├── JWTService.js                ✅ JWT utilities
-│   │       └── CertificateRegistry.json     ✅ Contract ABI
-│   ├── package.json                         ✅ Dependencies
-│   └── .env                                 ✅ Environment config
+│   │       ├── BlockchainService.js         ✅ Tương tác blockchain
+│   │       ├── HashService.js               ✅ Hash SHA-256
+│   │       ├── JWTService.js                ✅ Tiện ích JWT
+│   │       └── CertificateRegistry.json     ✅ ABI hợp đồng
+│   ├── package.json                         ✅ Các thư viện phụ thuộc
+│   └── .env                                 ✅ Cấu hình môi trường
 │
 ├── frontend/
 │   ├── src/
-│   │   ├── App.js                           ✅ Main app component
+│   │   ├── App.js                           ✅ Thành phần chính
 │   │   ├── index.js                         ✅ Entry point
 │   │   ├── pages/
-│   │   │   ├── Login.js                     ✅ Login page
-│   │   │   ├── Register.js                  ✅ Registration page
-│   │   │   ├── Dashboard.js                 ✅ Dashboard with stats
-│   │   │   ├── CreateCertificate.js         ✅ Certificate creation
-│   │   │   └── VerifyCertificate.js         ✅ Certificate verification
+│   │   │   ├── Login.js                     ✅ Trang đăng nhập
+│   │   │   ├── Register.js                  ✅ Trang đăng ký
+│   │   │   ├── Dashboard.js                 ✅ Trang tổng quan
+│   │   │   ├── CreateCertificate.js         ✅ Tạo chứng chỉ
+│   │   │   └── VerifyCertificate.js         ✅ Xác thực chứng chỉ
 │   │   └── utils/
-│   │       └── api.js                       ✅ API client
+│   │       └── api.js                       ✅ Client API
 │   ├── public/
-│   │   └── index.html                       ✅ HTML template
-│   ├── package.json                         ✅ Dependencies
-│   └── .env                                 ✅ Environment config
+│   │   └── index.html                       ✅ Mẫu HTML
+│   ├── package.json                         ✅ Các thư viện phụ thuộc
+│   └── .env                                 ✅ Cấu hình môi trường
 │
-├── SETUP.md                                 ✅ Full documentation
-├── QUICKSTART.md                            ✅ Quick start guide
-├── agents.md                                ✅ Agent structure
-└── usercase.md                              ✅ Use cases
+├── SETUP.md                                 ✅ Tài liệu cài đặt
+├── QUICKSTART.md                            ✅ Hướng dẫn nhanh
+├── agents.md                                ✅ Kiến trúc agent
+└── usercase.md                              ✅ Các kịch bản sử dụng
 ```
 
 ---
 
-## 🔧 Smart Contract Features
+## 🔧 Tính năng hợp đồng thông minh
 
 ### CertificateRegistry.sol (Solidity 0.8.19)
 
-**Core Functions:**
-- ✅ `createCertificate()` - Create new certificate on blockchain
-- ✅ `updateCertificate()` - Update certificate (versioning)
-- ✅ `revokeCertificate()` - Revoke certificate
-- ✅ `verifyCertificate()` - Verify certificate authenticity
-- ✅ `getCertificate()` - Retrieve certificate data
-- ✅ `getVersionHistory()` - Get all versions
-- ✅ `authorizeIssuer()` - Add authorized issuer
+**Các hàm chính:**
+- ✅ `createCertificate()` - Tạo chứng chỉ mới trên blockchain
+- ✅ `updateCertificate()` - Cập nhật chứng chỉ (versioning)
+- ✅ `revokeCertificate()` - Thu hồi chứng chỉ
+- ✅ `verifyCertificate()` - Xác thực tính hợp lệ của chứng chỉ
+- ✅ `getCertificate()` - Lấy dữ liệu chứng chỉ
+- ✅ `getVersionHistory()` - Lấy lịch sử phiên bản
+- ✅ `authorizeIssuer()` - Thêm người phát hành được ủy quyền
 
-**Data Structures:**
-- ✅ Certificate struct with all required fields
-- ✅ VersionHistory tracking
-- ✅ Certificate Status enum (ACTIVE, REVOKED, SUPERSEDED, PENDING)
-- ✅ Authorization mapping
+**Cấu trúc dữ liệu:**
+- ✅ Struct Certificate với các trường cần thiết
+- ✅ Theo dõi lịch sử phiên bản
+- ✅ Enum trạng thái chứng chỉ (ACTIVE, REVOKED, SUPERSEDED, PENDING)
+- ✅ Mapping xác thực quyền issuer
 
-**Events:**
+**Sự kiện:**
 - ✅ CertificateCreated
 - ✅ CertificateUpdated
 - ✅ CertificateRevoked
@@ -112,85 +112,85 @@ Blockchain/
 
 ---
 
-## 🚀 Backend API Features
+## 🚀 Tính năng API Backend
 
-### Authentication Routes (`/api/auth`)
-- ✅ POST `/register` - User registration
-- ✅ POST `/login` - User login
-- ✅ GET `/me` - Get current user
+### Route xác thực (`/api/auth`)
+- ✅ POST `/register` - Đăng ký người dùng
+- ✅ POST `/login` - Đăng nhập
+- ✅ GET `/me` - Lấy thông tin người dùng hiện tại
 
-### Certificate Routes (`/api/certificates`)
-- ✅ POST `/create` - Create certificate (admin only)
-- ✅ GET `/` - List user's certificates
-- ✅ GET `/:id` - Get certificate details
-- ✅ PUT `/:id` - Update certificate (admin only)
-- ✅ POST `/:id/revoke` - Revoke certificate (admin only)
-- ✅ GET `/:id/history` - Get version history
+### Route chứng chỉ (`/api/certificates`)
+- ✅ POST `/create` - Tạo chứng chỉ (chỉ admin)
+- ✅ GET `/` - Lấy danh sách chứng chỉ của người dùng
+- ✅ GET `/:id` - Lấy chi tiết chứng chỉ
+- ✅ PUT `/:id` - Cập nhật chứng chỉ (chỉ admin)
+- ✅ POST `/:id/revoke` - Thu hồi chứng chỉ (chỉ admin)
+- ✅ GET `/:id/history` - Lấy lịch sử phiên bản
 
-### Verification Routes (`/api/verify`)
-- ✅ POST `/certificate-id` - Verify by certificate ID
-- ✅ POST `/upload` - Verify by uploading data
+### Route xác thực (`/api/verify`)
+- ✅ POST `/certificate-id` - Xác thực bằng ID chứng chỉ
+- ✅ POST `/upload` - Xác thực bằng cách tải lên dữ liệu
 
-### QR Code Routes (`/api/qr`)
-- ✅ POST `/generate` - Generate QR code
-- ✅ GET `/:certificateId` - Get QR code
+### Route QR Code (`/api/qr`)
+- ✅ POST `/generate` - Tạo QR code
+- ✅ GET `/:certificateId` - Lấy QR code
 
-### Admin Routes (`/api/admin`)
-- ✅ GET `/certificates` - Get all certificates
-- ✅ GET `/users` - Get all users
-- ✅ GET `/stats` - Get system statistics
-
----
-
-## 🎨 Frontend Features
-
-### Pages Implemented
-- ✅ **Login Page** - User authentication
-- ✅ **Register Page** - New user registration
-- ✅ **Dashboard** - Overview with statistics
-- ✅ **Create Certificate** - Form for admin to create certificates
-- ✅ **Verify Certificate** - Verification by ID or upload
-
-### UI Components
-- ✅ Navigation bar with user info
-- ✅ Form validation
-- ✅ Error handling and display
-- ✅ Success notifications
-- ✅ Statistics grid (admin)
-- ✅ Certificate table with actions
-- ✅ QR code display
-- ✅ Responsive design
+### Route admin (`/api/admin`)
+- ✅ GET `/certificates` - Lấy tất cả chứng chỉ
+- ✅ GET `/users` - Lấy tất cả người dùng
+- ✅ GET `/stats` - Lấy số liệu hệ thống
 
 ---
 
-## 🔐 Security Implementation
+## 🎨 Tính năng giao diện Frontend
 
-✅ **Authentication:**
+### Các trang đã triển khai
+- ✅ **Login** - Đăng nhập người dùng
+- ✅ **Register** - Đăng ký người dùng mới
+- ✅ **Dashboard** - Tổng quan và thống kê
+- ✅ **Create Certificate** - Form tạo chứng chỉ
+- ✅ **Verify Certificate** - Xác thực chứng chỉ bằng ID hoặc tải dữ liệu
+
+### Thành phần giao diện
+- ✅ Thanh điều hướng với thông tin người dùng
+- ✅ Kiểm tra dữ liệu form
+- ✅ Xử lý và hiển thị lỗi
+- ✅ Thông báo thành công
+- ✅ Lưới thống kê cho admin
+- ✅ Bảng chứng chỉ với hành động
+- ✅ Hiển thị QR code
+- ✅ Thiết kế đáp ứng
+
+---
+
+## 🔐 Triển khai bảo mật
+
+✅ **Xác thực:**
 - JWT token-based
-- Secure password hashing with bcryptjs
-- Token stored in localStorage
+- Mã hóa mật khẩu bằng bcryptjs
+- Token lưu trong localStorage
 
-✅ **Authorization:**
-- Role-based access control (Admin, User, Verifier)
-- Admin-only operations protected
-- Middleware for authentication/authorization
+✅ **Phân quyền:**
+- Kiểm soát vai trò (Admin, User, Verifier)
+- Các thao tác admin được bảo vệ
+- Middleware kiểm tra xác thực và phân quyền
 
-✅ **Data Integrity:**
-- SHA-256 hashing for all certificates
-- Hash verification on blockchain
-- Immutable blockchain records
+✅ **Toàn vẹn dữ liệu:**
+- Hash SHA-256 cho tất cả chứng chỉ
+- Xác thực hash trên blockchain
+- Dữ liệu lưu trên blockchain bất biến
 
-✅ **Smart Contract:**
-- Authorized issuer validation
-- Transaction confirmation required
-- No direct data deletion (versioning only)
-- Status-based access control
+✅ **Hợp đồng thông minh:**
+- Xác thực quyền issuer
+- Yêu cầu xác nhận giao dịch
+- Không xoá dữ liệu trực tiếp (chỉ dùng versioning)
+- Kiểm soát truy cập theo trạng thái
 
 ---
 
-## 📊 Database Schema
+## 📊 Sơ đồ dữ liệu
 
-### Users Collection
+### Collection Users
 ```javascript
 {
   _id: ObjectId,
@@ -203,7 +203,7 @@ Blockchain/
 }
 ```
 
-### Certificates Collection
+### Collection Certificates
 ```javascript
 {
   _id: ObjectId,
@@ -230,34 +230,174 @@ Blockchain/
 
 ---
 
-## 🧪 Testing Flows
+## 🧪 Các luồng kiểm thử
 
-### 1. Certificate Creation Flow
+### 1. Luồng tạo chứng chỉ
 ```
-1. Admin registers and logs in
-2. Navigate to Create Certificate
-3. Fill in certificate details
-4. System generates SHA-256 hash
-5. Transaction submitted to blockchain
-6. Wait for confirmation
-7. QR code generated
-8. Certificate saved to MongoDB
-✓ Success notification shown
-```
-
-### 2. Certificate Verification Flow
-```
-1. Verifier navigates to Verify page
-2. Enter Certificate ID OR upload data
-3. System generates hash
-4. Query blockchain for transaction
-5. Verify hash matches
-6. Check certificate status
-7. Display verification result
-✓ VALID/REVOKED/NOT_FOUND result shown
+1. Admin đăng ký và đăng nhập
+2. Chuyển tới trang Create Certificate
+3. Điền thông tin chứng chỉ
+4. Hệ thống tạo hash SHA-256
+5. Gửi giao dịch lên blockchain
+6. Chờ xác nhận
+7. Tạo mã QR
+8. Lưu chứng chỉ vào MongoDB
+✓ Hiển thị thông báo thành công
 ```
 
-### 3. Admin Dashboard Flow
+### 2. Luồng xác thực chứng chỉ
+```
+1. Verifier vào trang Verify
+2. Nhập Certificate ID HOẶC tải dữ liệu lên
+3. Hệ thống tạo hash
+4. Tra cứu giao dịch trên blockchain
+5. Xác nhận hash khớp
+6. Kiểm tra trạng thái chứng chỉ
+7. Hiển thị kết quả xác thực
+✓ Hiển thị VALID/REVOKED/NOT_FOUND
+```
+
+### 3. Luồng Dashboard admin
+```
+1. Admin đăng nhập
+2. Dashboard hiển thị:
+   - Tổng số chứng chỉ
+   - Chứng chỉ đang hoạt động
+   - Chứng chỉ đã thu hồi
+   - Tổng số người dùng
+   - Bảng chứng chỉ gần đây
+3. Admin có thể thực hiện CRUD
+✓ Tất cả số liệu cập nhật theo thời gian thực
+```
+
+---
+
+## 🔗 Điểm tích hợp
+
+### Smart Contract → Backend
+- ✅ ABI được cung cấp dưới dạng JSON
+- ✅ BlockchainService xử lý tương tác với blockchain
+- ✅ Sử dụng ethers.js để giao tiếp Web3
+- ✅ Ký giao dịch bằng khóa riêng
+
+### Backend → Frontend
+- ✅ RESTful API trả JSON
+- ✅ Xử lý lỗi và mã trạng thái
+- ✅ Xác thực JWT
+- ✅ Cấu hình CORS
+
+### Frontend → Blockchain
+- ✅ Gián tiếp qua API backend
+- ✅ Sẵn sàng tích hợp MetaMask trong tương lai
+- ✅ QR code với liên kết xác thực
+
+---
+
+## 🚀 Hướng dẫn triển khai
+
+### Môi trường phát triển (đã thực hiện)
+```bash
+# Smart Contract
+cd smart-contract && npm run deploy:sepolia
+
+# Backend
+cd backend && npm run dev
+
+# Frontend
+cd frontend && npm start
+```
+
+### Checklist sản phẩm
+Xem phần `SETUP.md` mục Deployment
+
+---
+
+## 📝 Các tệp cấu hình
+
+| File | Vị trí | Trạng thái |
+|------|----------|--------|
+| Smart Contract Config | `smart-contract/hardhat.config.js` | ✅ |
+| Backend Config | `backend/.env` | ✅ |
+| Frontend Config | `frontend/.env` | ✅ |
+| Documentation | `SETUP.md` | ✅ |
+| Quick Start | `QUICKSTART.md` | ✅ |
+
+---
+
+## 🎯 Tính năng theo kịch bản sử dụng
+
+| UC | Tính năng | Trạng thái |
+|----|---------|--------|
+| UC-01 | Đăng nhập | ✅ Hoàn thành |
+| UC-02 | Tạo chứng chỉ | ✅ Hoàn thành |
+| UC-03 | Cập nhật chứng chỉ | ✅ Hoàn thành |
+| UC-04 | Thu hồi chứng chỉ | ✅ Hoàn thành |
+| UC-05 | Liệt kê chứng chỉ | ✅ Hoàn thành |
+| UC-06 | Xem chứng chỉ | ✅ Hoàn thành |
+| UC-07 | Xác thực chứng chỉ | ✅ Hoàn thành |
+| UC-08 | Lịch sử phiên bản | ✅ Hoàn thành |
+| UC-09 | Xác thực QR | ✅ Hoàn thành |
+| UC-10 | Xuất chứng chỉ | 🔄 Đã sẵn sàng (API sẵn sàng) |
+
+---
+
+## 📚 Tài liệu cung cấp
+
+✅ **SETUP.md** - Hướng dẫn cài đặt và triển khai đầy đủ
+✅ **QUICKSTART.md** - Hướng dẫn nhanh 5 phút
+✅ **agents.md** - Kiến trúc hệ thống và agents
+✅ **usercase.md** - Yêu cầu nghiệp vụ và kịch bản sử dụng
+✅ **README.md** (tệp này) - Tổng quan dự án
+
+---
+
+## 🔄 Bước tiếp theo (cải tiến tuỳ chọn)
+
+1. **PDF Export** - Tạo chứng chỉ có thể tải về định dạng PDF
+2. **Email Notifications** - Gửi thông báo khi xử lý chứng chỉ
+3. **Mobile App** - Phiên bản React Native
+4. **NFT Support** - Phát hành chứng chỉ dạng NFT
+5. **IPFS Integration** - Lưu trữ phi tập trung
+6. **Multi-chain** - Hỗ trợ nhiều blockchain
+7. **Advanced Search** - Tìm kiếm toàn văn
+8. **Audit Logs** - Lưu trữ nhật ký hoạt động đầy đủ
+
+---
+
+## 📊 Tóm tắt công nghệ
+
+| Layer | Công nghệ | Phiên bản |
+|-------|-----------|---------|
+| Smart Contract | Solidity | 0.8.19 |
+| Backend | Node.js | 16+ |
+| Backend Framework | Express | 4.18+ |
+| Frontend | React | 18+ |
+| Blockchain | Ethereum/Sepolia | - |
+| Database | MongoDB | 6+ |
+| Wallet | MetaMask | - |
+| Hashing | SHA-256 | - |
+
+---
+
+## ✨ Thành tựu chính
+
+✅ **Ứng dụng full-stack** - Frontend, backend, hợp đồng thông minh
+✅ **Tích hợp blockchain** - Hoạt động trên Sepolia testnet
+✅ **Toàn vẹn dữ liệu** - Hash SHA-256 xác thực trên chain
+✅ **Quản lý người dùng** - Xác thực đa vai trò
+✅ **Vòng đời chứng chỉ** - Tạo, cập nhật, thu hồi, xác thực
+✅ **Quản lý phiên bản** - Theo dõi lịch sử đầy đủ
+✅ **Mã QR** - Liên kết xác thực qua QR
+✅ **Dashboard admin** - Thống kê và quản lý
+✅ **Sẵn sàng sản xuất** - Tài liệu đầy đủ
+
+
+---
+
+**Trạng thái dự án:** ✅ HOÀN THÀNH & SẴN SÀNG SỬ DỤNG
+
+**Cập nhật lần cuối:** May 11, 2026  
+**Phiên bản:** 1.0.0
 ```
 1. Admin logs in
 2. Dashboard shows:
@@ -391,15 +531,6 @@ See `SETUP.md` Section: Deployment
 ✅ **Admin dashboard** - Statistics and management  
 ✅ **Production-ready** - Comprehensive documentation  
 
----
-
-## 📞 Support
-
-For issues or questions:
-1. Check `SETUP.md` troubleshooting section
-2. Review `QUICKSTART.md` for common issues
-3. Check blockchain transactions on Sepolia Scan
-4. Verify `.env` configuration files
 
 ---
 
