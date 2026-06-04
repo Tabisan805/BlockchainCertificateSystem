@@ -1,0 +1,448 @@
+[
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "string",
+        "name": "certificateId",
+        "type": "string"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "issuer",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "skillName",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "timestamp",
+        "type": "uint256"
+      }
+    ],
+    "name": "CertificateCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "string",
+        "name": "certificateId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "newVersion",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "timestamp",
+        "type": "uint256"
+      }
+    ],
+    "name": "CertificateUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "string",
+        "name": "certificateId",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "timestamp",
+        "type": "uint256"
+      }
+    ],
+    "name": "CertificateRevoked",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "issuer",
+        "type": "address"
+      }
+    ],
+    "name": "IssuerAuthorized",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_certificateId",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "_owner",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "_skillName",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_certificateHash",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_expiryDate",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "_metadata",
+        "type": "string"
+      }
+    ],
+    "name": "createCertificate",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_issuer",
+        "type": "address"
+      }
+    ],
+    "name": "authorizeIssuer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_certificateId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_newHash",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_metadata",
+        "type": "string"
+      }
+    ],
+    "name": "updateCertificate",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_certificateId",
+        "type": "string"
+      }
+    ],
+    "name": "revokeCertificate",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_certificateId",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_hash",
+        "type": "string"
+      }
+    ],
+    "name": "verifyCertificate",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "isValid",
+        "type": "bool"
+      },
+      {
+        "internalType": "enum CertificateRegistry.CertificateStatus",
+        "name": "status",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_certificateId",
+        "type": "string"
+      }
+    ],
+    "name": "getCertificate",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "certificateId",
+            "type": "string"
+          },
+          {
+            "internalType": "address",
+            "name": "issuer",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "owner",
+            "type": "address"
+          },
+          {
+            "internalType": "string",
+            "name": "certificateHash",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "issueDate",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "expiryDate",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "skillName",
+            "type": "string"
+          },
+          {
+            "internalType": "enum CertificateRegistry.CertificateStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "string",
+            "name": "metadata",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "version",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct CertificateRegistry.Certificate",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_certificateId",
+        "type": "string"
+      }
+    ],
+    "name": "getVersionHistory",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "version",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "certificateHash",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "timestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "enum CertificateRegistry.CertificateStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "updatedBy",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct CertificateRegistry.VersionHistory[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_certificateId",
+        "type": "string"
+      }
+    ],
+    "name": "getCertificateStatus",
+    "outputs": [
+      {
+        "internalType": "enum CertificateRegistry.CertificateStatus",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAuthorizedIssuers",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "name": "certificates",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "certificateId",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "issuer",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "certificateHash",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "issueDate",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "expiryDate",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "skillName",
+        "type": "string"
+      },
+      {
+        "internalType": "enum CertificateRegistry.CertificateStatus",
+        "name": "status",
+        "type": "uint8"
+      },
+      {
+        "internalType": "string",
+        "name": "metadata",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "version",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
